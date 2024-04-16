@@ -1,14 +1,8 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Index from "./pages/Index.jsx";
-
-function App() {
+function AppWithAuth() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Index />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   );
 }
-
-export default App;
+export default AppWithAuth;

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "@chakra-ui/react";
 import { Box, Heading, Text, Image, Stack, Flex, Link, Icon } from "@chakra-ui/react";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 const Index = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const logout = () => setIsAuthenticated(false);
   return (
     <Box>
       <Flex as="header" align="center" justify="space-between" wrap="wrap" padding="1.5rem" bg="teal.500" color="white">
@@ -68,8 +71,11 @@ const Index = () => {
         </Stack>
       </Box>
 
+      <Button onClick={logout} colorScheme="teal">
+        Logout
+      </Button>
       <Box as="footer" padding="2rem" bg="teal.500" color="white" textAlign="center">
-        <Text>© 2023 James Monroe. All rights reserved.</Text>
+        <Text>© 2024 James Monroe. All rights reserved.</Text>
       </Box>
     </Box>
   );
